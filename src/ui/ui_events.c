@@ -3,3 +3,9 @@
 // LVGL version: 8.3.11
 // Project name: FalconryScale-IoT
 
+#include "ui.h"
+
+void function_tare(lv_event_t * e)
+{
+	// Your code here
+}

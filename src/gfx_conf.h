@@ -1,3 +1,6 @@
+#ifndef GFX_CONF_H
+#define GFX_CONF_H
+
 #define LGFX_USE_V1
 #include <LovyanGFX.hpp>
 #include <lgfx/v1/platforms/esp32s3/Panel_RGB.hpp>
@@ -10,15 +13,11 @@
  * CrowPanel_50 means CrowPanel 5.0inch Board
  * CrowPanel_70 means CrowPanel 7.0inch Board
  ******************************************************************************/
-// #define CrowPanel_70
-// #define CrowPanel_50
-#define CrowPanel_43
+#define CrowPanel_43 // Adjust this definition based on your display
 
-
-#if defined (CrowPanel_70)
-
-#define screenWidth   800
-#define screenHeight  480
+#if defined(CrowPanel_70)
+#define screenWidth 800
+#define screenHeight 480
 class LGFX : public lgfx::LGFX_Device
 {
 public:
@@ -68,15 +67,15 @@ public:
             cfg.pin_pclk = GPIO_NUM_0;
             cfg.freq_write = 16000000;
 
-            cfg.hsync_polarity    = 0;
+            cfg.hsync_polarity = 0;
             cfg.hsync_front_porch = 40;
             cfg.hsync_pulse_width = 48;
-            cfg.hsync_back_porch  = 40;
-            
-            cfg.vsync_polarity    = 0;
+            cfg.hsync_back_porch = 40;
+
+            cfg.vsync_polarity = 0;
             cfg.vsync_front_porch = 1;
             cfg.vsync_pulse_width = 31;
-            cfg.vsync_back_porch  = 13;
+            cfg.vsync_back_porch = 13;
 
             cfg.pclk_active_neg = 1;
             cfg.de_idle_high = 0;
@@ -95,19 +94,19 @@ public:
 
         {
             auto cfg = _touch_instance.config();
-            cfg.x_min      = 0;
-            cfg.x_max      = 799;
-            cfg.y_min      = 0;
-            cfg.y_max      = 479;
-            cfg.pin_int    = -1;
-            cfg.pin_rst    = -1;
+            cfg.x_min = 0;
+            cfg.x_max = 799;
+            cfg.y_min = 0;
+            cfg.y_max = 479;
+            cfg.pin_int = -1;
+            cfg.pin_rst = -1;
             cfg.bus_shared = true;
             cfg.offset_rotation = 0;
-            cfg.i2c_port   = I2C_NUM_1;
-            cfg.pin_sda    = GPIO_NUM_19;
-            cfg.pin_scl    = GPIO_NUM_20;
-            cfg.freq       = 400000;
-            cfg.i2c_addr   = 0x14;
+            cfg.i2c_port = I2C_NUM_1;
+            cfg.pin_sda = GPIO_NUM_19;
+            cfg.pin_scl = GPIO_NUM_20;
+            cfg.freq = 400000;
+            cfg.i2c_addr = 0x14;
             _touch_instance.config(cfg);
             _panel_instance.setTouch(&_touch_instance);
         }
@@ -115,10 +114,10 @@ public:
     }
 };
 
-#elif defined (CrowPanel_50)
+#elif defined(CrowPanel_50)
 
-#define screenWidth   800
-#define screenHeight  480
+#define screenWidth 800
+#define screenHeight 480
 class LGFX : public lgfx::LGFX_Device
 {
 public:
@@ -168,15 +167,15 @@ public:
             cfg.pin_pclk = GPIO_NUM_0;
             cfg.freq_write = 15000000;
 
-            cfg.hsync_polarity    = 0;
+            cfg.hsync_polarity = 0;
             cfg.hsync_front_porch = 8;
             cfg.hsync_pulse_width = 4;
-            cfg.hsync_back_porch  = 43;
-            
-            cfg.vsync_polarity    = 0;
+            cfg.hsync_back_porch = 43;
+
+            cfg.vsync_polarity = 0;
             cfg.vsync_front_porch = 8;
             cfg.vsync_pulse_width = 4;
-            cfg.vsync_back_porch  = 12;
+            cfg.vsync_back_porch = 12;
 
             cfg.pclk_active_neg = 1;
             cfg.de_idle_high = 0;
@@ -195,19 +194,19 @@ public:
 
         {
             auto cfg = _touch_instance.config();
-            cfg.x_min      = 0;
-            cfg.x_max      = 799;
-            cfg.y_min      = 0;
-            cfg.y_max      = 479;
-            cfg.pin_int    = -1;
-            cfg.pin_rst    = -1;
+            cfg.x_min = 0;
+            cfg.x_max = 799;
+            cfg.y_min = 0;
+            cfg.y_max = 479;
+            cfg.pin_int = -1;
+            cfg.pin_rst = -1;
             cfg.bus_shared = true;
             cfg.offset_rotation = 0;
-            cfg.i2c_port   = I2C_NUM_1;
-            cfg.pin_sda    = GPIO_NUM_19;
-            cfg.pin_scl    = GPIO_NUM_20;
-            cfg.freq       = 400000;
-            cfg.i2c_addr   = 0x14;
+            cfg.i2c_port = I2C_NUM_1;
+            cfg.pin_sda = GPIO_NUM_19;
+            cfg.pin_scl = GPIO_NUM_20;
+            cfg.freq = 400000;
+            cfg.i2c_addr = 0x14;
             _touch_instance.config(cfg);
             _panel_instance.setTouch(&_touch_instance);
         }
@@ -215,10 +214,10 @@ public:
     }
 };
 
-#elif defined (CrowPanel_43)
+#elif defined(CrowPanel_43)
 
-#define screenWidth   480
-#define screenHeight  272
+#define screenWidth 480
+#define screenHeight 272
 class LGFX : public lgfx::LGFX_Device
 {
 public:
@@ -268,15 +267,15 @@ public:
             cfg.pin_pclk = GPIO_NUM_42;
             cfg.freq_write = 8000000;
 
-            cfg.hsync_polarity    = 0;
+            cfg.hsync_polarity = 0;
             cfg.hsync_front_porch = 8;
             cfg.hsync_pulse_width = 4;
-            cfg.hsync_back_porch  = 43;
-            
-            cfg.vsync_polarity    = 0;
+            cfg.hsync_back_porch = 43;
+
+            cfg.vsync_polarity = 0;
             cfg.vsync_front_porch = 8;
             cfg.vsync_pulse_width = 4;
-            cfg.vsync_back_porch  = 12;
+            cfg.vsync_back_porch = 12;
 
             cfg.pclk_active_neg = 1;
             cfg.de_idle_high = 0;
@@ -295,28 +294,31 @@ public:
 
         {
             auto touch_cfg = _touch_instance.config();
-            touch_cfg.x_min      = 100;    // タッチスクリーンから得られる最小のX値(生の値)
-            touch_cfg.x_max      = 4000;  // タッチスクリーンから得られる最大のX値(生の値)
-            touch_cfg.y_min      = 100;    // タッチスクリーンから得られる最小のY値(生の値)
-            touch_cfg.y_max      = 4000;  // タッチスクリーンから得られる最大のY値(生の値)
-            touch_cfg.pin_int    = 36;   // INTが接続されているピン番号
-            touch_cfg.bus_shared = true; // 画面と共通のバスを使用している場合 trueを設定
-            touch_cfg.offset_rotation = 0;// 表示とタッチの向きのが一致しない場合の調整 0~7の値で設定
+            touch_cfg.x_min = 100;    // Minimum X value from the touchscreen
+            touch_cfg.x_max = 4000;  // Maximum X value from the touchscreen
+            touch_cfg.y_min = 100;    // Minimum Y value from the touchscreen
+            touch_cfg.y_max = 4000;  // Maximum Y value from the touchscreen
+            touch_cfg.pin_int = 36;   // Pin number connected to INT
+            touch_cfg.bus_shared = true; // Set true if using the shared bus with display
+            touch_cfg.offset_rotation = 0; // Adjust if the touch direction doesn't match the display
 
-            // SPI接続の場合
-            touch_cfg.spi_host   = SPI2_HOST; //HSPI_HOST;// 使用するSPIを選択 (HSPI_HOST or VSPI_HOST)
-            touch_cfg.freq       = 1000000;     // SPIクロックを設定
-            touch_cfg.pin_sclk   = GPIO_NUM_12;     // SCLKが接続されているピン番号
-            touch_cfg.pin_mosi   = GPIO_NUM_11;     // MOSIが接続されているピン番号
-            touch_cfg.pin_miso   = GPIO_NUM_13;     // MISOが接続されているピン番号
-            touch_cfg.pin_cs     = GPIO_NUM_0;     //   CSが接続されているピン番号
+            // SPI connection
+            touch_cfg.spi_host = SPI2_HOST; // Use HSPI_HOST or VSPI_HOST
+            touch_cfg.freq = 1000000;     // Set SPI clock
+            touch_cfg.pin_sclk = GPIO_NUM_12;     // Pin number connected to SCLK
+            touch_cfg.pin_mosi = GPIO_NUM_11;     // Pin number connected to MOSI
+            touch_cfg.pin_miso = GPIO_NUM_13;     // Pin number connected to MISO
+            touch_cfg.pin_cs = GPIO_NUM_0;     // Pin number connected to CS
 
             _touch_instance.config(touch_cfg);
-            _panel_instance.setTouch(&_touch_instance);  // タッチスクリーンをパネルにセットします。
+            _panel_instance.setTouch(&_touch_instance);  // Set touchscreen to the panel
         }
         setPanel(&_panel_instance);
     }
 };
-#endif
 
-LGFX tft;
+#endif // End of board definition check
+
+extern LGFX tft; // Ensure this line is present
+
+#endif // GFX_CONF_H
