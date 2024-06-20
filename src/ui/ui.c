@@ -3,6 +3,7 @@
 // LVGL version: 8.3.11
 // Project name: FalconryScale-IoT
 
+#include <stdio.h>
 #include "ui.h"
 #include "ui_helpers.h"
 
@@ -53,6 +54,7 @@ void ui_event_loading_screen(lv_event_t * e)
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_SCREEN_LOADED) {
         _ui_screen_change(&ui_weight_screen, LV_SCR_LOAD_ANIM_FADE_ON, 500, 1000, &ui_weight_screen_screen_init);
+        //printf("Screen change initiated\n");
     }
 }
 void ui_event_weight_screen_button_button1(lv_event_t * e)
@@ -77,7 +79,9 @@ void ui_event_weight_screen_button_button2(lv_event_t * e)
 void ui_init(void)
 {
     lv_disp_t * dispp = lv_disp_get_default();
-    lv_theme_t * theme = lv_theme_default_init(dispp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED),
+    lv_theme_t * theme = lv_theme_default_init(dispp,
+                                               lv_palette_main(LV_PALETTE_BLUE),
+                                               lv_palette_main(LV_PALETTE_RED),
                                                false, LV_FONT_DEFAULT);
     lv_disp_set_theme(dispp, theme);
     ui_loading_screen_screen_init();

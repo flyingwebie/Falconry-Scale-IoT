@@ -45,10 +45,6 @@ extern lv_obj_t * ui_startevents____initial_actions0;
 LV_IMG_DECLARE(ui_img_logo_logo_png);    // assets/Logo/Logo.png
 
 
-
-
-
-
 void ui_init(void);
 
 #ifdef __cplusplus

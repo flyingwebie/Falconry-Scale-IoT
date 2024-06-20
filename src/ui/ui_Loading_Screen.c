@@ -5,6 +5,7 @@
 
 #include "ui.h"
 
+
 void ui_loading_screen_screen_init(void)
 {
     ui_loading_screen = lv_obj_create(NULL);
