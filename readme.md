@@ -1,6 +1,6 @@
 # Arduino Weight Scale with TFT Display and Touch Interface
 
-This project uses an Arduino to create a weight scale with a TFT display and touch interface. The weight is measured using an HX711 load cell amplifier and displayed on a TFT screen using the LVGL graphics library.
+This project uses a custom board with a ESP32 to create a weight scale with a TFT display and touch interface. The weight is measured using an HX711 load cell amplifier and displayed on a TFT screen using the LVGL graphics library.
 
 ## Components
 
