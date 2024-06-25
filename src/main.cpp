@@ -13,8 +13,9 @@
 #define I2S_DOUT      20
 #define I2S_BCLK      35
 #define I2S_LRC       19
-#define BUTTON_PIN    38
 
+
+#define BUTTON_PIN    38
 
 /******************************************************************************/
 
@@ -30,8 +31,6 @@ Arduino_GFX *lcd = create_default_Arduino_GFX();
 
 int led;
 SPIClass& spi = SPI;
-
-
 
 Arduino_ESP32RGBPanel *bus = new Arduino_ESP32RGBPanel(
   GFX_NOT_DEFINED /* CS */, GFX_NOT_DEFINED /* SCK */, GFX_NOT_DEFINED /* SDA */,
@@ -115,7 +114,6 @@ void setup()
   digitalWrite(38, LOW);
   pinMode(0, OUTPUT);//TOUCH-CS
 
-
   //lvgl初始化
   lv_init();
 
@@ -152,8 +150,8 @@ void setup()
   pinMode(TFT_BL, OUTPUT);
   digitalWrite(TFT_BL, HIGH);
 #endif
-  ui_init();//开机UI界面
 
+  ui_init();//开机UI界面
 
   lv_timer_handler();
 
