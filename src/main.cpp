@@ -2,7 +2,7 @@
 #include <SPI.h>
 #include <Arduino_GFX_Library.h>
 #include "ui.h"
-
+#include "HX711.h"
 
 //4.3
 #define SD_MOSI 11
@@ -14,8 +14,7 @@
 #define I2S_BCLK      35
 #define I2S_LRC       19
 
-
-#define BUTTON_PIN    38
+//#define BUTTON_PIN    38
 
 /******************************************************************************/
 
@@ -157,16 +156,7 @@ void setup()
 
 }
 
-void loop()
-{
-
+void loop(){
   lv_timer_handler();
-
-  if(led == 1)
-  digitalWrite(38, HIGH);
-  if(led == 0)
-  digitalWrite(38, LOW);
   delay(50);
-
 }
-
